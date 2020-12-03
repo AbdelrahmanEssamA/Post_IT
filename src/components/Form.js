@@ -85,6 +85,7 @@ export default function FormDialog() {
   };
 
   function handleSubmit(event) {
+    event.preventDefault();
     setOpen(false);
     event.preventDefault();
     const { postText } = post;
@@ -224,7 +225,7 @@ export default function FormDialog() {
           <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button type="submit" onClick={handleSubmit} color="primary">
+          <Button onClick={handleSubmit} color="primary">
             Add Post
           </Button>
         </DialogActions>

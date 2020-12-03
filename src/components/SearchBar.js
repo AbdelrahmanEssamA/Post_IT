@@ -38,14 +38,16 @@ export default function SearchBar() {
   const classes = useStyles();
   const [tag, setTag] = useState("");
 
-  function handleSubmit() {
+  function handleSubmit(e) {
     if (tag !== "") {
+      e.preventDefault();
       dispatchTag(searchTag({ articles, tag }));
     } else {
       dispatchRemoveTag(removeSearchTag({ articles }));
     }
   }
   function handleTagChange(event) {
+    event.preventDefault();
     setTag(event.target.value);
   }
   return (
@@ -53,7 +55,7 @@ export default function SearchBar() {
       <Typography align="center" spacing={1}>
         Search with Tag
       </Typography>
-      <Paper component="form" className={classes.root}>
+      <Paper component="form" className={classes.root} onSubmit={handleSubmit}>
         <InputBase
           value={tag}
           className={classes.input}
