@@ -7,4 +7,4 @@ An application for adding advertisments and categorise them enabling the user to
 - Redux
 
 # Demo: 
-https://peaceful-hodgkin-8eb35c.netlify.app/
+https://posting-app-ae.netlify.app/
